@@ -1,0 +1,223 @@
+@import url('reset.css');
+
+/* ========== VARIABLES ========== */
+:root {
+  /* Colors */
+  --clr-primary: hsl(240, 38%, 20%);
+  --clr-secondary: hsl(240, 18%, 77%);
+  /* Typography */
+  --ff-primary: "Inter", sans-serif;
+  --fs-400: 1rem;
+  --fs-500: clamp(1.25rem, 5.1724vw + -1.2328rem, 2rem);
+}
+
+/* ========== GLOBAL ========== */
+body {
+  font-family: var(--ff-primary);
+  color: var(--clr-primary);
+  background-image: url("../images/pattern-curve.svg");
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: 60% auto;
+  padding: 1rem;
+  display: grid;
+  place-items: center;
+  grid-template-rows: 1fr;
+}
+
+h1 {
+  font-family: var(--ff-secondary);
+}
+
+p {
+  font-size: var(--fs-500);
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+/* ========== UTILITIES ========== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ========== COMPONENTS ========== */
+.button {
+  cursor: pointer;
+  background-color: #FFFFFF;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.button:hover {
+  background-color: #EEEEEE;
+}
+
+.button--left {
+  background-image: url("../images//icon-prev.svg");
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.button--right {
+  background-image: url("../images//icon-next.svg");
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+@media (min-width: 768px) {
+  .button {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* ========== MAIN ========== */
+.main {
+  background-image: url("../images/pattern-bg.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@media (min-width: 768px) {
+  .main {
+    background-position: right center;
+  }
+}
+
+/* ========== TESTIMONIALS ========== */
+.testimonials__images {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  padding: 12.5%;
+  isolation: isolate;
+}
+
+.testimonials__images::before {
+  content: "*";
+  position: absolute;
+  z-index: -1;
+  width: 75%;
+  height: 75%;
+  left: 50%;
+  bottom: 45%;
+  background: var(--clr-primary);
+  opacity: 0.5;
+  filter: blur(30px);
+  transform: translate(-50%, 50%);
+}
+
+.testimonials__images>img {
+  grid-column: 1;
+  grid-row: 1;
+  border-radius: 0.5rem;
+  clip-path: ellipse(0% 0% at 50% 50%);
+  transition: clip-path 1s ease 0.5s;
+}
+
+.testimonials__images>img.active {
+  clip-path: ellipse(100% 100% at 50% 50%);
+  transition: clip-path 1s ease;
+  z-index: 999;
+}
+
+.testimonials__controls {
+  position: absolute;
+  bottom: 12.5%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  z-index: 1000;
+}
+
+.testimonials__content {
+  background-image: url("../images/pattern-quotes.svg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 70px auto;
+  text-align: center;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+.testimonials__content>blockquote {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.testimonials__quote p {
+  opacity: 0;
+  transform: translateY(-15px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.testimonials__quote footer {
+  font-weight: 700;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.testimonials__quote.active p,
+.testimonials__quote.active footer {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease 0.5s, transform 0.5s ease 0.5s;
+}
+
+.testimonials__quote span {
+  display: block;
+  color: var(--clr-secondary);
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .testimonials {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+
+  .testimonials__content {
+    background-position: 7rem 0rem;
+    background-size: initial;
+    padding-top: 4rem;
+    text-align: left;
+    z-index: 1;
+    width: calc(45% + 125px);
+    margin-right: -125px;
+  }
+
+  .testimonials__quote span {
+    display: inline;
+    margin-left: 0.5rem;
+  }
+
+  .testimonials__images {
+    padding: 3rem;
+    width: 55%;
+  }
+
+  .testimonials__controls {
+    bottom: 3rem;
+    left: 25%;
+  }
+}

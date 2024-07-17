@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "testimonial": "I’ve been interested in coding for a while but never taken the jump, until now. I couldn’t recommend this course enough. I’m now in the job of my dreams and so excited about the future.",
+    "name": "Tanya Sinclair",
+    "position": "UX Engineer",
+    "image": "images/image-tanya.jpg"
+  },
+  {
+    "id": 2,
+    "testimonial": "If you want to lay the best foundation possible I’d recommend taking this course. The depth the instructors go into is incredible. I now feel so confident about starting up as a professional developer.",
+    "name": "John Tarkpor",
+    "position": "Junior Front-end Developer",
+    "image": "images/image-john.jpg"
+  },
+  {
+    "id": 3,
+    "testimonial": "This course has completely changed my career trajectory. The hands-on approach and real-world examples provided the best learning experience I've ever had.",
+    "name": "Sara Wilks",
+    "position": "Full-stack Developer",
+    "image": "images/image-sara.jpg"
+  },
+  {
+    "id": 4,
+    "testimonial": "The course content is very well structured and covers all the essential topics needed to become a proficient web developer. I now feel ready to tackle any web development project.",
+    "name": "James Smith",
+    "position": "Front-end Developer",
+    "image": "images/image-james.jpg"
+  }
+]
